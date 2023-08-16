@@ -166,10 +166,10 @@ while True:
             meteor_group.add(meteor)
 
         # Spawn Lasers
-        if event.type == pygame.MOUSEBUTTONDOWN and laser_active:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE and laser_active:
         #if pygame.mouse.get_pressed()[0]:
             try:
-                laser = Laser(PATH + 'laserBlue01.png', event.pos, 15)
+                laser = Laser(PATH + 'laserBlue01.png', pygame.mouse.get_pos(), 15)
                 laser_group.add(laser)
                 laser_active = False
                 laser_timer = pygame.time.get_ticks()
